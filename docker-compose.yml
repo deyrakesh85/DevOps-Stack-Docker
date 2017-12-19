@@ -1,0 +1,57 @@
+
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: "deyrakesh85/jenkins:0.1"
+    ports:
+      - "8090:8080"
+
+  nexus:
+    container_name: nexus
+    image: "sonatype/nexus:latest"
+    ports:
+      - "8091:8081"
+  sonar:
+    container_name: sonar
+    image: "sonarqube:latest"
+    command: "-Dsonar.web.context=/sonar"
+    ports:
+      - "9000:9000"
+    depends_on:
+      - "db"
+    environment:
+      SONARQUBE_JDBC_USERNAME: "sonar"
+      SONARQUBE_JDBC_PASSWORD: "sonar"
+      SONARQUBE_JDBC_URL: "jdbc:mysql://sonar-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true"
+   
+  db:
+    container_name: sonar-mysql
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "sonar"
+      MYSQL_DATABASE: "sonar"
+      MYSQL_USER: "sonar"
+      MYSQL_PASSWORD: "sonar"
+
+  gitlab:
+    container_name: gitlab
+    image: "gitlab/gitlab-ce:latest"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: "external_url 'http://localhost:8822/gitlab'"
+
+  nginx:
+    container_name: nginx
+    image: "nginx:latest"
+    ports:
+      - "80:80"
+    depends_on:
+      - "jenkins"
+      - "nexus"
+      - "sonar"
+      - "gitlab"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./html:/usr/share/nginx/html

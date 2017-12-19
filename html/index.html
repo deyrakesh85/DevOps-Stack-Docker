@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>DevOps</title>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+	background: #A6A3F2;
+}
+
+header {background: #2F2C82;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="flex-container">
+<header>
+  <h1>Welcome to DevOps DashBoard!!</h1>
+</header>
+
+<article class="article">
+<h2>
+<div style="float:right; height: 450px; width: 440px">
+	<p><i>This Dashboard provides a central view of the devops tools. <br />
+	<br />
+	<br />
+	<br />
+	<br />
+	It has all the basic yet core components required for continous delivery methods. <br />
+	<br />
+	<br />
+	<br />
+	<br />
+	Click on the images of each tools to go to the individual console.</i></p>
+</div>
+<div style=" height: 450px; width: 1014px; ">
+<div style="width:500px;height:220px; float:left; border:2px solid #000000; margin:1px; background-color:#E0E0FA">
+	<div style="width:220px;height:216px; float:left; margin:1px;">
+		<a href="/jenkins" target="_blank">
+			<img src="images/jenkins.jpg" alt="jenkins" style="border-radius: 50%; width:200px;height:200px; display: block; float: left; border:2px solid #000000; margin:8px"/>
+		</a>
+	</div>
+	<div style="width:268px;height:216px; margin:1px; float: right;">
+		<div>
+			<center><font size="6">Jenkins</font><center>
+		</div>
+		<br />
+		<div>
+			<center><font size="4">Continous Integration & Continous Delivery</font><center>
+		</div>
+	</div>
+</div>
+
+<div style="width:500px;height:220px; float:left; border:2px solid #000000; margin:1px; background-color:#E0E0FA">
+	<div style="width:220px;height:216px; float:left; margin:1px; ">	
+		<a href="/nexus" target="_blank">
+			<img src="images/nexus.png" alt="nexus" style="border-radius: 50%; width:200px;height:200px; display: block; float: left; border:2px solid #000000; margin:8px" />
+		</a>
+	</div>	
+	<div style="width:268px;height:216px; margin:1px; float: right">
+		<div>
+			<center><font size="6">Nexus</font><center>
+		</div>
+		<br />
+		<div>
+			<center><font size="4">Software Repository Manager</font><center>
+		</div>
+	</div>
+</div>
+
+<div style="width:500px;height:220px; float:left; border:2px solid #000000; margin:1px; background-color:#E0E0FA">
+	<div style="width:220px;height:216px; float:left; margin:1px;">
+		<a href="/sonar" target="_blank">
+			<img src="images/sonar.png" alt="sonar" style="border-radius: 50%; width:200px;height:200px; display: block; float:left; border:2px solid #000000; margin:8px" />
+		</a>
+	</div>
+	<div style="width:268px;height:216px; margin:1px; float:right">
+		<div>
+			<center><font size="6">SonarQube</font><center>
+		</div>
+		<br />
+		<div>
+			<center><font size="4">Static Code Analysis</font><center>
+		</div> 
+	</div>
+</div>
+
+<div style="width:500px;height:220px; float:left; border:2px solid #000000; margin:1px; background-color:#E0E0FA">
+	<div style="width:220px;height:216px; float:left; margin:1px;">
+		<a href="/gitlab" target="_blank">
+			<img src="images/gitlab.png" alt="gitlab" style="border-radius: 50%; width:200px;height:200px; display: block; float:left; border:2px solid #000000; margin:8px" />
+		</a>
+	</div>
+	<div style="width:268px;height:216px; margin:1px; float:right">
+		<div>
+			<center><font size="6">GitLab</font><center>
+		</div>
+		<br />
+		<div>
+			<center><font size="4">Git Source Code Management Server</font><center>
+		</div>
+	</div>
+</div>
+</div>
+
+</h2>
+</article>
+<footer>Copyright &copy; DevOps Team</footer>
+</div>
+</body>
+</html>
